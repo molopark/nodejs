@@ -3,11 +3,85 @@
 <head>
 	<meta charset='utf-8' />
 	<title>hello node.js</title>
+	<script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+	<script src="/js/common.js" type="text/javascript"></script>
 </head>
 
 <body>
 	<h1>Hello!</h1>
 	html 페이지 입니다.</br>
-	안녕하세요!!!
+	안녕하세요!!!</br>
+	</br>
+
+	<table>
+	<thead>
+		<tr>
+			<th scope="col">
+				<span class="chck2">
+					<input type="checkbox" id="chkAll">
+						<label for="chkAll">상품구분</label>
+				</span>
+			</th>
+			<th scope="col">
+				<span class="chck2">상품명/이벤트명</span>
+			</th>
+		</tr>
+	</thead>
+	<tbody id="listDetail">
+
+		<tr class="sList">
+			<td>
+				<span class="chck2">
+					<input type="checkbox" class="0103437867" name="chkList" id="agreementPrd0"
+						typecd="[TV]" combiinetrecvno="">
+						<label for="agreementPrd0">[TV]</label>
+				</span>
+			</td>
+			<td>
+				[0103437867]
+				<br>(UHD)skyA13(SkyBlueUHD)5년약정(플레이보이TV)(201910)
+			</td>
+		</tr>
+		<tr class="sList">
+			<td>
+				<span class="chck2">
+					<input type="checkbox" class="0103437868" name="chkList" id="agreementPrd1"
+						typecd="[TV]" combiinetrecvno="">
+						<label for="agreementPrd1">[TV]</label>
+				</span>
+			</td>
+			<td>
+				[0103437868]
+				<br>(UHD)skyA13(SkyBlueUHD)5년약정(플레이보이TV)(201910)
+			</td>
+		</tr>
+		<tr class="sList">
+			<td>
+				<span class="chck2">
+					<input type="checkbox" class="0103437869" name="chkList" id="agreementPrd2"
+						typecd="[TV]" combiinetrecvno="">
+						<label for="agreementPrd2">[TV]</label>
+				</span>
+			</td>
+			<td>
+				[0103437869]
+				<br>(UHD)skyA13(SkyBlueUHD)5년약정(플레이보이TV)(201910)
+			</td>
+		</tr>
+		<tr class="sList">
+			<td>
+				<span class="chck2">
+					<input type="checkbox" class="0103438373" name="chkList"
+						id="agreementPrd16" typecd="[결합]" combitvrecvno="0103437869" combiinetrecvno="0103438178">
+						<label for="agreementPrd16">[결합]</label>
+				</span>
+			</td>
+			<td>
+				[0103438373]
+				<br>인터넷+TV
+			</td>
+		</tr>
+	</tbody>
+	</table>
 </body>
 </html>

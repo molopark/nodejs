@@ -5,8 +5,19 @@ var fs = require('fs');
 var server = http.createServer(function(request, response){
 	var parsedUrl = url.parse(request.url);
 	var resource = parsedUrl.pathname;
+	var resourcePath = '.'+resource;
 
-	if(resource == '/hello'){
+	if(resource.indexOf('/html/') == 0 || resource.indexOf('/js/') == 0){
+		fs.readFile(resourcePath, 'utf-8', function(error, data){
+			if(error){
+				response.writeHead('500', {'Content-Type':'text/html'});
+				response.end('500 server error:'+error);
+			} else {
+				response.writeHead('200', {'Content-Type':'text/html'});
+				response.end(data);
+			}
+		});
+	} else if(resource == '/hello'){
 		fs.readFile('hello.html', 'utf-8', function(error, data){
 			if(error){
 				response.writeHead('500', {'Content-Type':'text/html'});
