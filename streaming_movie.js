@@ -7,6 +7,8 @@ var server = http.createServer(function(request, response){
 	var resource = parsedUrl.pathname;
 	var resourcePath = '.'+resource;
 
+	//console.log(resourcePath);
+
 	if(resource.indexOf('/html/') == 0 || resource.indexOf('/js/') == 0){
 		fs.readFile(resourcePath, 'utf-8', function(error, data){
 			if(error){
@@ -24,6 +26,10 @@ var server = http.createServer(function(request, response){
 		stream.on('data', function(data){
 			count = count + 1;
 			response.write(data);
+		});
+
+		stream.on('error',function(err){
+			response.end('500 server error:'+err);
 		});
 
 		stream.on('end',function(){
